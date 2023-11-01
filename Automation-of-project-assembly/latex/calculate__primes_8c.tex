@@ -1,0 +1,40 @@
+\hypertarget{calculate__primes_8c}{}\doxysection{Файл calculate\+\_\+primes.\+c}
+\label{calculate__primes_8c}\index{calculate\_primes.c@{calculate\_primes.c}}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{calculate__primes_8c_a35df32405acac0f810b51376d71f4341}{calculate\+\_\+primes}} (int primes\mbox{[}$\,$\mbox{]}, int n)
+\begin{DoxyCompactList}\small\item\em Функция заполнения массива индикаторами простых чисел от 0 до n включительно \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Функция в отдельном файле 
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{calculate__primes_8c_a35df32405acac0f810b51376d71f4341}\label{calculate__primes_8c_a35df32405acac0f810b51376d71f4341}} 
+\index{calculate\_primes.c@{calculate\_primes.c}!calculate\_primes@{calculate\_primes}}
+\index{calculate\_primes@{calculate\_primes}!calculate\_primes.c@{calculate\_primes.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_primes()}{calculate\_primes()}}
+{\footnotesize\ttfamily void calculate\+\_\+primes (\begin{DoxyParamCaption}\item[{int}]{primes\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Функция заполнения массива индикаторами простых чисел от 0 до n включительно 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{calculate__primes_8c_a35df32405acac0f810b51376d71f4341}{calculate\_primes}} (\textcolor{keywordtype}{int} primes[], \textcolor{keywordtype}{int} n)\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} i,j;}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (i = 2; i <= n;i++)\{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (primes [i] != 1) \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{for} (j = 2; j <= n; j++)\{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} ((primes[j] \% primes[i] == 0) \&\& (primes  [j] != primes [i])) \{}
+\DoxyCodeLine{                    primes[j] = 1;}
+\DoxyCodeLine{                    \}}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{\} }
+
+\end{DoxyCode}
+ 

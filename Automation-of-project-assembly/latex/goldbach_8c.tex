@@ -1,0 +1,79 @@
+\hypertarget{goldbach_8c}{}\doxysection{Файл goldbach.\+c}
+\label{goldbach_8c}\index{goldbach.c@{goldbach.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}calculate\+\_\+primes.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для goldbach.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{goldbach_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{goldbach_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Функция реализует гипотезу Гольдобаха \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Программа проверки гипотезы Гольдобаха с использованием функции \mbox{\hyperlink{calculate__primes_8c_a35df32405acac0f810b51376d71f4341}{calculate\+\_\+primes()}} из соответствующего модуля. 
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{goldbach_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{goldbach_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{goldbach.c@{goldbach.c}!main@{main}}
+\index{main@{main}!goldbach.c@{goldbach.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция реализует гипотезу Гольдобаха 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{goldbach_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} () \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} n, m, number1, number2, i, x, y;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} s = 0;}
+\DoxyCodeLine{     max = 1000000;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} buffer = 0;}
+\DoxyCodeLine{        printf (\textcolor{stringliteral}{"{}Введи число n: "{}});}
+\DoxyCodeLine{        scanf (\textcolor{stringliteral}{"{}\%d"{}}, \&n);}
+\DoxyCodeLine{        printf (\textcolor{stringliteral}{"{}Введи число m: "{}});}
+\DoxyCodeLine{        scanf (\textcolor{stringliteral}{"{}\%d"{}}, \&m);}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} arr[m];}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (i = 1; i <= m; i++) \{}
+\DoxyCodeLine{        arr[i] = i;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{    \mbox{\hyperlink{calculate__primes_8c_a35df32405acac0f810b51376d71f4341}{calculate\_primes}} (arr,m);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (i = n; i <= m; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (i \% 2 == 0) \{}
+\DoxyCodeLine{        printf (\textcolor{stringliteral}{"{}\%d "{}},i);}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (x = 1;x <= m; x++)\{}
+\DoxyCodeLine{            \textcolor{keywordflow}{for} (y = 1; y <= m;y++) \{}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} ((arr[x] != 1) \&\& (arr[y] != 1) \&\& (arr[x] + arr[y] == i)) \{}
+\DoxyCodeLine{                s++;}
+\DoxyCodeLine{                \textcolor{keywordflow}{if} ((arr[x] != arr[y]) \&\& ((arr[x]+arr[y]) == (arr[y]+arr[x]))) \{}
+\DoxyCodeLine{                buffer++;}
+\DoxyCodeLine{                \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (x <= max) \{}
+\DoxyCodeLine{            number1 = x;}
+\DoxyCodeLine{            number2 = y;}
+\DoxyCodeLine{            max = x;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{s= s -\/ buffer/2;}
+\DoxyCodeLine{printf (\textcolor{stringliteral}{"{}\%d \%d \%d\(\backslash\)n"{}},s ,number1, number2);}
+\DoxyCodeLine{s = 0;}
+\DoxyCodeLine{buffer = 0;}
+\DoxyCodeLine{max = 1000000;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
