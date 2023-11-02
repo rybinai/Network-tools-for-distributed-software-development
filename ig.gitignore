@@ -1,7 +1,5 @@
-# ignore 
-
 *.o
 
 *.exe
 
-*Makefile
+Makefile
